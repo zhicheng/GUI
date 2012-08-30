@@ -29,8 +29,7 @@ namespace GUI {
 
 class Point {
 public:
-	float x;
-	float y;
+	float x, y;
 
 	Point(float x_=0, float y_=0) : x(x_), y(y_) 
 	{}
@@ -41,8 +40,7 @@ public:
 
 class Size {
 public:
-	float width;
-	float height;
+	float width, height;
 
 	Size(float width_=0, float height_=0) 
 	: width(width_), height(height_) {}
@@ -64,9 +62,19 @@ public:
 
 };
 
+class Color {
+public:
+	float r,g,b;
+	
+	Color(float r_=0, float g_=0, float b_=0) 
+	: r(r_), g(g_), b(b_) {}
+};
+
+
 class View {
 public:
-	Rect frame;
+	Rect  frame;
+	Color backgroundColor;
 
 	View(Rect frame_) : frame(frame_) {}
 	
