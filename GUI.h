@@ -23,6 +23,8 @@
 #ifndef __GUI_H__
 #define __GUI_H__
 
+#include <iostream>
+
 namespace GUI {
 
 class Point {
@@ -63,7 +65,16 @@ public:
 };
 
 class View {
+public:
 	Rect frame;
+
+	View(Rect frame_) : frame(frame_) {}
+	
+	void addSubview(View &subview);
+	void removeFromSuperview();
+
+private:
+	std::list<View> subviews;
 };
 
 
